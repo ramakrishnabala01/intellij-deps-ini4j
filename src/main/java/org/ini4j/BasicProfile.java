@@ -31,12 +31,29 @@ public class BasicProfile extends CommonMultiMap<String, Profile.Section> implem
     private static final Pattern EXPRESSION = Pattern.compile(
             "(?<!\\\\)\\$\\{(([^\\[\\}]+)(\\[([0-9]+)\\])?/)?([^\\[^/\\}]+)(\\[(([0-9]+))\\])?\\}");
     private static final int G_SECTION = 2;
+
+    private static final int C_SECTION = 2;
+
     private static final int G_SECTION_IDX = 4;
     private static final int G_OPTION = 5;
     private static final int G_OPTION_IDX = 7;
     private static final long serialVersionUID = -1817521505004015256L;
+
+    public String get_comment() {
+        return _comment;
+    }
+
+    public void set_comment(String _comment) {
+        this._comment = _comment;
+    }
+
     private String _comment;
     private final boolean _propertyFirstUpper;
+
+    public boolean is_treeMode() {
+        return _treeMode;
+    }
+
     private final boolean _treeMode;
 
     public BasicProfile()
